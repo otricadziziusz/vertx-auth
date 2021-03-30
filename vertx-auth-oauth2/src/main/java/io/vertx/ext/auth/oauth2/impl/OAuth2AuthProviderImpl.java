@@ -353,7 +353,7 @@ public class OAuth2AuthProviderImpl implements OAuth2Auth {
           }
         });
       }
-    } catch (ClassCastException | CredentialValidationException e) {
+    } catch (RuntimeException e) {
       handler.handle(Future.failedFuture(e));
     }
   }

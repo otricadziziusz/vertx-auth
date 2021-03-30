@@ -424,7 +424,7 @@ public class WebAuthnImpl implements WebAuthn {
         default:
           handler.handle(Future.failedFuture("Can not determine type of response!"));
       }
-    } catch (ClassCastException | CredentialValidationException e) {
+    } catch (RuntimeException e) {
       handler.handle(Future.failedFuture(e));
     }
   }
